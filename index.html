@@ -346,51 +346,7 @@
                 <!-- Natural Images -->
             </div>
             <div class="container">
-                <div id="results-carousel" class="carousel results-carousel">
-                    <div class="item">
-                        <div class="twentytwenty-container" data-orientation="horizontal" style="max-width: 1200px; margin: 20px auto;">
-                            <img src="vis/NextTurn/1_1.png" style="position: absolute;width: 1200px" /> 
-                            <img src="vis/NextTurn/1_2.png" />
-                            <img src="vis/NextTurn/1_3.png" />
-                            <img src="vis/NextTurn/1_4.png" />
-                        </div>
-                        <div class="desc-container">
-                            <p class="desc-item active" data-step="0" style="margin-top: 13px;">
-                                Could you swap out that rectangular wood table for a round, more boho rattan one — something that feels lighter and hand‑made but not super wicker-y — and pop a small potted plant somewhere by the seating (either on the deck next to the sofa or perched near the chairs, whatever looks best)? Also, get rid of the two little gray bowl candles on the table and replace them with a single nicer decorative piece, like a tray or something that ties it together. Make it cozy and balanced, but keep the same overall vibe
-                            </p>
-                            <p class="desc-item" data-step="1" style="margin-top: 13px;">
-                                Can you kind of swap that candle thing on the far right for a frosted‑glass hurricane with a beeswax pillar in it — matte but still showing a warm little flame — then tuck a small, low side table at the right end of the sofa (something simple and useful, not flashy) and drop a low outdoor pouf near the coffee table so it looks casually usable and not perfectly staged?
-                            </p>
-                            <p class="desc-item" data-step="2" style="margin-top: 13px;">
-                                Can you swap that frosted candle thing on the right for an old metal lantern — like vintage-looking but not all rusty — and change the navy patterned throw pillows to simple linen ones (neutral, not boring)? Also turn the little tray on the table into a matte black metal tray with a thin gold rim so it feels a bit dressed up but still natural and cozy — make it look real and a touch aged, but classy, not shiny.
-                            </p>
-                            <p class="desc-item" data-step="3" style="margin-top: 13px;">
-                                &nbsp;
-                            </p>
-                        </div>
-                    </div>
-                    <!-- <div class="item">
-                        <div class="twentytwenty-container" data-orientation="horizontal" style="max-width: 1200px; margin: 20px auto;">
-                            <img src="vis/NextTurn/2_1.png" style="position: absolute;width: 1200px" /> 
-                            <img src="vis/NextTurn/2_2.png" />
-                            <img src="vis/NextTurn/2_3.png" />
-                            <img src="vis/NextTurn/2_4.png" />
-                        </div>
-                        <div class="desc-container">
-                            <p class="desc-item active" data-step="0" style="margin-top: 13px;">
-                                Can you just pop a little potted herb—like a tiny basil or something—somewhere over by those jars on the left of the counter? And swap out that wooden soap pump on the right for a short cream ceramic cup/utensil-holder with a couple of wooden spoons (same-ish size), but still keep the cozy wood feel so it doesn’t stick out; oh, and add one ceramic mug near the kettle on the right, just casually placed — any color that works, make it look natural but not messy, maybe a bit styled, and if you could make the basil look really lush like it’s been growing there forever that’d be ideal.
-                            </p>
-                            <p class="desc-item" data-step="1" style="margin-top: 13px;">
-                                Could you kind of slip a little wooden scoop down in the front row of jars — like tucked in but still peeking out so you can see it, not totally hidden — and swap that small sealed glass jar at the front center-left for a short white ceramic spice jar with a cork top (simple, but maybe with a tiny bit of worn character so it doesn’t look too new)? And toss a single fresh lemon onto the little wooden coaster or just beside the mug on the right — bright and perfect, like it was just dropped there a second ago but didn’t roll away, natural but a bit eye-catching.
-                            </p>
-                            <p class="desc-item" data-step="2" style="margin-top: 13px;">
-                                Could you swap that little wooden scoop for a tiny brass measuring spoon and just lay it down near the front jars so it’s sort of peeking out and maybe catching a little light? Also change the mug to a speckled stoneware one — hand-thrown looking, not huge but with some character — and tuck a folded linen napkin beside the utensil holder or down by the jars, something soft and a bit lived-in that peeks out. Make it all feel natural and a touch vintage, but not cluttered — effortless, you know?
-                            </p>
-                            <p class="desc-item" data-step="3" style="margin-top: 13px;">
-                                &nbsp;
-                            </p>
-                        </div>
-                    </div> -->
+                <!-- <div id="results-carousel" class="carousel results-carousel"> -->
                     <div class="item">
                         <div class="twentytwenty-container" data-orientation="horizontal" style="max-width: 1200px; margin: 20px auto;">
                             <img src="vis/NextTurn/3_1.png" style="position: absolute;width: 1200px" /> 
@@ -413,7 +369,7 @@
                             </p>
                         </div>
                     </div>
-                </div>
+                <!-- </div> -->
             </div>
         </div>
     </section>
@@ -503,18 +459,12 @@
                     var $this = $(this);
                     var imgs = [];
                     $this.find('img').each(function() { imgs.push($(this).attr('src')); });
-                    if (imgs.length > 2) {
+                    if (imgs.length > 1) {
                         $this.data('images', imgs);
                         $this.data('step', 0);
                         // Only keep the first two images for initialization
                         $this.find('img').slice(2).remove();
                     }
-                });
-
-                // Initialize the plugin
-                $containers.twentytwenty({
-                    default_offset_pct: 0, // Start from left
-                    orientation: 'horizontal'
                 });
 
                 // Add scan buttons
@@ -634,7 +584,11 @@
                         });
                     }
                 });
-
+                // Initialize the plugin
+                $containers.twentytwenty({
+                    default_offset_pct: 1, // Start from left
+                    orientation: 'horizontal'
+                });
             } else {
                 // Initialize the twentytwenty plugin using jQuery
                 setTimeout(initTwentyTwentyWhenReady, 200);
