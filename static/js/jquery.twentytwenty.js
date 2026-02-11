@@ -4,8 +4,6 @@
     var options = $.extend({
       default_offset_pct: 0.5,
       orientation: 'horizontal',
-      before_label: 'Before',
-      after_label: 'After',
       no_overlay: false,
       move_slider_on_hover: false,
       move_with_handle_only: true,
@@ -25,8 +23,6 @@
       if(!options.no_overlay) {
         container.append("<div class='twentytwenty-overlay'></div>");
         var overlay = container.find(".twentytwenty-overlay");
-        overlay.append("<div class='twentytwenty-before-label' data-content='"+options.before_label+"'></div>");
-        overlay.append("<div class='twentytwenty-after-label' data-content='"+options.after_label+"'></div>");
       }
       var beforeImg = container.find("img:first");
       var afterImg = container.find("img:last");
